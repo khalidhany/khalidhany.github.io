@@ -1,1 +1,1076 @@
- <h1>Khaled Hani - Data Analyst Portfolio (Coming Soon)</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khalid Hany — Portfolio</title>
+<meta name="description" content="Khalid Hany: Business Information Systems student focusing on SQL data analysis, AI prompting, and Crenox (@crenoxhq).">
+<script>
+  (function() {
+    var saved = localStorage.getItem('kh-theme');
+    if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+<style>
+  /* Clean Neutral Palette: Soft Off-White Light & Pure Neutral Zinc Dark */
+  :root,
+  [data-theme="light"] {
+    --bg: #f4f4f2;
+    --surface: #ffffff;
+    --subtle: #ebebea;
+    --text: #18181b;
+    --muted: #52525b;
+    --faint: #71717a;
+    --border: #e4e4e7;
+    --border-hover: #d4d4d8;
+    --accent: #18181b;
+    --accent-fg: #ffffff;
+    --topbar: rgba(244, 244, 242, 0.88);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  [data-theme="dark"] {
+    --bg: #111111;
+    --surface: #181818;
+    --subtle: #222222;
+    --text: #f4f4f5;
+    --muted: #a1a1aa;
+    --faint: #71717a;
+    --border: #27272a;
+    --border-hover: #3f3f46;
+    --accent: #f4f4f5;
+    --accent-fg: #111111;
+    --topbar: rgba(17, 17, 17, 0.88);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.45);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+  }
+
+  body {
+    font-family: var(--sans);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .icon {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    flex-shrink: 0;
+  }
+
+  /* Topbar */
+  .topbar {
+    background-color: var(--topbar);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+
+  .topbar-inner {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-name {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.2px;
+  }
+
+  .brand-sub {
+    font-size: 12px;
+    color: var(--faint);
+    border-left: 1px solid var(--border);
+    padding-left: 10px;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .nav a {
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .nav a:hover {
+    color: var(--text);
+  }
+
+  .theme-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    color: var(--text);
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .theme-btn:hover {
+    border-color: var(--border-hover);
+    background-color: var(--subtle);
+  }
+
+  /* Main Container */
+  .container {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+
+  /* Profile Header */
+  .hero {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow);
+  }
+
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 2px;
+  }
+
+  .hero-sub {
+    font-size: 12.5px;
+    color: var(--faint);
+    font-family: var(--mono);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .stat-pill {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 11px;
+    font-size: 12px;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .stat-pill strong {
+    font-family: var(--mono);
+    color: var(--text);
+  }
+
+  .hero-bio {
+    color: var(--muted);
+    max-width: 780px;
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .meta-item a {
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .meta-item a:hover {
+    color: var(--text);
+    border-color: var(--text);
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 36px;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .section-note {
+    font-size: 11.5px;
+    color: var(--faint);
+    font-family: var(--mono);
+  }
+
+  /* Balanced 2-Column Project Grid */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  }
+
+  .card:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-1px);
+  }
+
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background-color: var(--subtle);
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .card-desc {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-bottom: 14px;
+  }
+
+  .bullet-list {
+    list-style: none;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .bullet-list li {
+    position: relative;
+    padding-left: 14px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .bullet-list li strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .bullet-list li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    background-color: var(--faint);
+    border-radius: 50%;
+  }
+
+  .card-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 5px;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .link-btn:hover {
+    border-color: var(--border-hover);
+    background-color: var(--subtle);
+  }
+
+  .link-btn.primary {
+    background-color: var(--accent);
+    color: var(--accent-fg);
+    border-color: var(--accent);
+  }
+
+  .link-btn.primary:hover {
+    opacity: 0.9;
+  }
+
+  /* Filter Buttons */
+  .filter-bar {
+    display: inline-flex;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2px;
+    border-radius: 6px;
+    gap: 2px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--sans);
+  }
+
+  .filter-btn:hover {
+    color: var(--text);
+  }
+
+  .filter-btn.active {
+    background-color: var(--subtle);
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* Repository Grid */
+  .repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+  }
+
+  .repo-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 15px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .repo-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-1px);
+  }
+
+  .repo-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .repo-name {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text);
+    word-break: break-all;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .repo-name:hover {
+    text-decoration: underline;
+  }
+
+  .repo-desc {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    flex-grow: 1;
+  }
+
+  .repo-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--faint);
+    font-family: var(--mono);
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Spec Table */
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .spec-table td {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .spec-table tr:last-child td {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .spec-key {
+    color: var(--faint);
+    width: 34%;
+    font-weight: 600;
+    padding-right: 12px;
+  }
+
+  .spec-val {
+    color: var(--muted);
+  }
+
+  .spec-val strong {
+    color: var(--text);
+  }
+
+  .spec-val a {
+    border-bottom: 1px solid var(--border-hover);
+  }
+
+  code {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: var(--text);
+  }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+    margin-top: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--faint);
+  }
+
+  .footer a {
+    color: var(--muted);
+  }
+
+  .footer a:hover {
+    color: var(--text);
+  }
+
+  @media (max-width: 640px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    .brand-sub {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-name">Khalid Hany</span>
+      <span class="brand-sub">BIS &middot; Data Analysis</span>
+    </div>
+    <nav class="nav">
+      <a href="#projects">Projects</a>
+      <a href="#repositories">Repositories</a>
+      <a href="#credentials">Credentials</a>
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="icon" id="theme-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <span id="theme-label">Dark</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Profile Overview -->
+  <section class="hero">
+    <div class="hero-top">
+      <div>
+        <h1>Khalid Hany Youssef El-Shishtawy</h1>
+        <div class="hero-sub">khalidhany &middot; Business Information Systems Student &middot; Founder of @crenoxhq</div>
+      </div>
+      <div class="hero-stats">
+        <span class="stat-pill">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          Repos: <strong id="gh-repo-count">13</strong>
+        </span>
+        <span class="stat-pill">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+          Followers: <strong id="gh-followers">4</strong>
+        </span>
+        <span class="stat-pill">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <strong>@crenoxhq</strong>
+        </span>
+      </div>
+    </div>
+
+    <p class="hero-bio">
+      First-year Business Information Systems student at Tanta University building a career as a Business Data Analyst. Equipped with foundational computer science knowledge (Harvard CS50x), SQL database query skills, and hands-on experience using AI prompting tools to optimize workflows and build analytical dashboards.
+    </p>
+
+    <div class="hero-meta">
+      <span class="meta-item">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        Al-Behara, Egypt
+      </span>
+      <span class="meta-item">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        <a href="mailto:khalidhany.cs@gmail.com">khalidhany.cs@gmail.com</a>
+      </span>
+      <span class="meta-item">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        <a href="https://github.com/khalidhany" target="_blank" rel="noopener">github.com/khalidhany</a>
+      </span>
+      <span class="meta-item">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        <a href="https://www.linkedin.com/in/khalid-hani-5b1a34429" target="_blank" rel="noopener">LinkedIn</a>
+      </span>
+    </div>
+  </section>
+
+  <!-- Balanced 2x2 Grid for All 4 Core Projects -->
+  <section id="projects" class="section">
+    <div class="section-head">
+      <h2 class="section-title">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        Projects &amp; Case Studies
+      </h2>
+      <span class="section-note">Data Analysis &amp; @crenoxhq</span>
+    </div>
+
+    <div class="projects-grid">
+      <!-- 1. US Superstore Analysis (Compact, Equal Size) -->
+      <article class="card">
+        <div>
+          <div class="card-head">
+            <h3 class="card-title">
+              <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              US Superstore Margin Analysis
+            </h3>
+            <span class="badge">DuckDB SQL</span>
+          </div>
+          <p class="card-desc">
+            Diagnostic SQL analysis across 9,994 retail rows ($2.30M sales, $286.4K profit) isolating margin erosion across 49 states and 17 sub-categories. Dashboard built via AI prompting.
+          </p>
+          <ul class="bullet-list">
+            <li><strong>Division &amp; State Audit:</strong> Isolated Furniture margin compression (<code>2.49%</code>) and 10 loss-making states (<code>-$98,246.74</code>) driven by 28%–39% average discounts.</li>
+            <li><strong>Root-Cause Isolation:</strong> Verified that flat 30% discounts—not shipping tiers—drive Texas losses, led by Binders (<code>-$12,166.62</code>) and Appliances (<code>-$4,252.27</code>).</li>
+          </ul>
+        </div>
+        <div class="card-foot">
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">DuckDB</span>
+            <span class="tag">AI Prompting</span>
+          </div>
+          <div class="links">
+            <a class="link-btn primary" id="dash-btn" href="https://khalidhany.github.io/supermarket/" target="_blank" rel="noopener">Dashboard</a>
+            <a class="link-btn" id="sql-btn" href="https://github.com/khalidhany/supermarket/blob/main/01_sql/analysis_queries.sql" target="_blank" rel="noopener">SQL</a>
+            <a class="link-btn" href="https://github.com/khalidhany/supermarket" target="_blank" rel="noopener">Repo</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Crenox Open Source -->
+      <article class="card">
+        <div>
+          <div class="card-head">
+            <h3 class="card-title">
+              <svg class="icon" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              Crenox (Open-Source CLI)
+            </h3>
+            <span class="badge">@crenoxhq</span>
+          </div>
+          <p class="card-desc">
+            Public, open-source Git pre-commit secret scanner and credentials detector written in Go. Inspects staged changes prior to commit without external dependencies.
+          </p>
+          <ul class="bullet-list">
+            <li><strong>Static Binary:</strong> Standalone executable for local Git hooks and CI workflows.</li>
+            <li><strong>Distribution:</strong> Published on GitHub Releases, GitHub Actions Marketplace, and Homebrew (<code>crenoxhq/homebrew-crenox</code>).</li>
+          </ul>
+        </div>
+        <div class="card-foot">
+          <div class="tags">
+            <span class="tag">Go</span>
+            <span class="tag">Git Hooks</span>
+            <span class="tag">CLI</span>
+          </div>
+          <div class="links">
+            <a class="link-btn" href="https://github.com/crenoxhq/crenox" target="_blank" rel="noopener">crenoxhq/crenox</a>
+            <a class="link-btn" href="https://github.com/crenoxhq/homebrew-crenox" target="_blank" rel="noopener">Homebrew</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Crenox Pro -->
+      <article class="card">
+        <div>
+          <div class="card-head">
+            <h3 class="card-title">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Crenox Pro (Enterprise Tool)
+            </h3>
+            <span class="badge">@crenoxhq</span>
+          </div>
+          <p class="card-desc">
+            Proprietary, closed-source commercial tool configured for professional and enterprise on-premises secret governance across workstation fleets.
+          </p>
+          <ul class="bullet-list">
+            <li><strong>Fleet Architecture:</strong> Central policy controller (<code>crenox-master</code>) paired with a local enforcement agent (<code>crenox-agent</code>).</li>
+            <li><strong>Documentation:</strong> Deployment guides and API reference maintained in <code>crenoxhq/crenox-pro</code>.</li>
+          </ul>
+        </div>
+        <div class="card-foot">
+          <div class="tags">
+            <span class="tag">On-Premises</span>
+            <span class="tag">Policy Governance</span>
+          </div>
+          <div class="links">
+            <a class="link-btn" href="https://github.com/crenoxhq/crenox-pro" target="_blank" rel="noopener">crenoxhq/crenox-pro</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Cents & Senses -->
+      <article class="card">
+        <div>
+          <div class="card-head">
+            <h3 class="card-title">
+              <svg class="icon" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              Cents &amp; Senses
+            </h3>
+            <span class="badge">CS50x Final Project</span>
+          </div>
+          <p class="card-desc">
+            Personal finance tracker built with Python, Flask, and SQLite that records daily expenses alongside purchasing behavior and commodity inflation.
+          </p>
+          <ul class="bullet-list">
+            <li><strong>Relational Schema:</strong> Normalized 4-table SQLite database (<code>users</code>, <code>expenses</code>, <code>tracked_items</code>, <code>price_logs</code>).</li>
+            <li><strong>Behavioral Metrics:</strong> Quantifies unnecessary and regretted spending and logs longitudinal commodity prices.</li>
+          </ul>
+        </div>
+        <div class="card-foot">
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">Python</span>
+          </div>
+          <div class="links">
+            <a class="link-btn" href="https://github.com/khalidhany/cents-and-senses" target="_blank" rel="noopener">Repository</a>
+            <a class="link-btn" href="https://youtu.be/i4eIbcCCK_I" target="_blank" rel="noopener">Video Demo</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- GitHub Repositories -->
+  <section id="repositories" class="section">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          GitHub Repositories
+        </h2>
+        <span class="section-note" id="sync-status" style="margin-left: 8px;">Synced with GitHub API</span>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterRepos('all', this)">All</button>
+        <button class="filter-btn" onclick="filterRepos('source', this)">Original &amp; Org</button>
+        <button class="filter-btn" onclick="filterRepos('crenoxhq', this)">@crenoxhq</button>
+        <button class="filter-btn" onclick="filterRepos('fork', this)">Forks</button>
+      </div>
+    </div>
+
+    <div id="repo-grid" class="repo-grid"></div>
+  </section>
+
+  <!-- Education & Skills -->
+  <section id="credentials" class="section" style="margin-bottom: 0;">
+    <div class="section-head">
+      <h2 class="section-title">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        Education, Certifications &amp; Skills
+      </h2>
+    </div>
+
+    <div class="projects-grid">
+      <div class="card">
+        <table class="spec-table">
+          <tr>
+            <td class="spec-key">University</td>
+            <td class="spec-val">
+              <strong>Tanta University, Faculty of Commerce</strong><br>
+              B.Com in Business Information Systems (Level 1, Expected 2030)
+            </td>
+          </tr>
+          <tr>
+            <td class="spec-key">Certification</td>
+            <td class="spec-val">
+              <strong>CS50x: Introduction to Computer Science</strong><br>
+              Harvard Online &mdash; <a href="https://certificates.cs50.io/435edfc2-ba77-4de2-85c4-b26adc4ac791.pdf" target="_blank" rel="noopener">Verified Certificate</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="spec-key">Languages</td>
+            <td class="spec-val">Arabic (Native), English (Good Working Proficiency)</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <table class="spec-table">
+          <tr>
+            <td class="spec-key">Technical Skills</td>
+            <td class="spec-val">SQL (DuckDB, SQLite), Relational Database Fundamentals, Computer Science Principles, AI Prompting, Git, GitHub, Operating Systems</td>
+          </tr>
+          <tr>
+            <td class="spec-key">Business Focus</td>
+            <td class="spec-val">Business Data Analysis, Financial Accounting Fundamentals, Profitability &amp; Margin Analysis, Financial Markets &amp; Trading</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>Khalid Hany Youssef El-Shishtawy</div>
+    <div>
+      <a href="https://github.com/khalidhany" target="_blank" rel="noopener">github.com/khalidhany</a> &middot;
+      <a href="https://github.com/crenoxhq" target="_blank" rel="noopener">github.com/crenoxhq</a> &middot;
+      <a href="https://www.linkedin.com/in/khalid-hani-5b1a34429" target="_blank" rel="noopener">LinkedIn</a> &middot;
+      <a href="mailto:khalidhany.cs@gmail.com">khalidhany.cs@gmail.com</a>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+const FALLBACK_REPOS = [
+  { owner: "khalidhany", name: "supermarket", full_name: "khalidhany/supermarket", html_url: "https://github.com/khalidhany/supermarket", description: "Diagnostic SQL analysis using DuckDB and interactive dashboard investigating profit margin erosion across US Superstore retail operations.", language: "SQL / HTML", fork: false, updated_at: "2026-11-10T06:43:00Z" },
+  { owner: "crenoxhq", name: "crenox", full_name: "crenoxhq/crenox", html_url: "https://github.com/crenoxhq/crenox", description: "Statically compiled, zero-dependency Git pre-commit secret scanner written in Go.", language: "Go", fork: false, updated_at: "2026-11-04T20:18:00Z" },
+  { owner: "crenoxhq", name: "crenox-pro", full_name: "crenoxhq/crenox-pro", html_url: "https://github.com/crenoxhq/crenox-pro", description: "Official technical documentation, API reference, and deployment guides for Crenox Pro.", language: "Docs", fork: false, updated_at: "2026-11-07T06:13:00Z" },
+  { owner: "crenoxhq", name: "homebrew-crenox", full_name: "crenoxhq/homebrew-crenox", html_url: "https://github.com/crenoxhq/homebrew-crenox", description: "Official Homebrew Tap for Crenox CLI.", language: "Ruby", fork: false, updated_at: "2026-10-28T11:00:00Z" },
+  { owner: "crenoxhq", name: "serverless-node-api-boilerplate", full_name: "crenoxhq/serverless-node-api-boilerplate", html_url: "https://github.com/crenoxhq/serverless-node-api-boilerplate", description: "Serverless API boilerplate with authentication and PostgreSQL integration.", language: "Python", fork: false, updated_at: "2026-10-20T10:00:00Z" },
+  { owner: "khalidhany", name: "cents-and-senses", full_name: "khalidhany/cents-and-senses", html_url: "https://github.com/khalidhany/cents-and-senses", description: "Personal finance and commodity inflation tracker built with Python, Flask, and SQLite (CS50x).", language: "HTML", fork: false, updated_at: "2026-08-30T19:06:30Z" },
+  { owner: "khalidhany", name: "khalidhany.github.io", full_name: "khalidhany/khalidhany.github.io", html_url: "https://github.com/khalidhany/khalidhany.github.io", description: "Personal portfolio website.", language: "HTML", fork: false, updated_at: "2026-11-10T06:00:00Z" },
+  { owner: "khalidhany", name: "khalidhany", full_name: "khalidhany/khalidhany", html_url: "https://github.com/khalidhany/khalidhany", description: "GitHub profile README.", language: "Markdown", fork: false, updated_at: "2026-11-10T06:00:00Z" },
+  { owner: "khalidhany", name: "Card-Wars-Kingdom-Revived", full_name: "khalidhany/Card-Wars-Kingdom-Revived", html_url: "https://github.com/khalidhany/Card-Wars-Kingdom-Revived", description: "A reversed-engineered server for Card Wars Kingdom.", language: "Python", fork: true, updated_at: "2026-10-29T04:06:48Z" },
+  { owner: "khalidhany", name: "awesome-cli-apps-in-a-csv", full_name: "khalidhany/awesome-cli-apps-in-a-csv", html_url: "https://github.com/khalidhany/awesome-cli-apps-in-a-csv", description: "Curated list of command line programs organized into CSV files.", language: "Python", fork: true, updated_at: "2026-10-28T11:29:00Z" },
+  { owner: "khalidhany", name: "pre-commit.com", full_name: "khalidhany/pre-commit.com", html_url: "https://github.com/khalidhany/pre-commit.com", description: "Pre-commit framework website and documentation.", language: "Python", fork: true, updated_at: "2026-10-28T11:27:59Z" },
+  { owner: "khalidhany", name: "awesome-devsecops", full_name: "khalidhany/awesome-devsecops", html_url: "https://github.com/khalidhany/awesome-devsecops", description: "Curated list of DevSecOps tools, practices, and resources.", language: "Docs", fork: true, updated_at: "2026-10-28T11:27:31Z" },
+  { owner: "khalidhany", name: "awesome-security", full_name: "khalidhany/awesome-security", html_url: "https://github.com/khalidhany/awesome-security", description: "Collection of software, libraries, documents, and resources about security.", language: "Docs", fork: true, updated_at: "2026-10-28T11:27:03Z" },
+  { owner: "khalidhany", name: "awesome-security-pipeline", full_name: "khalidhany/awesome-security-pipeline", html_url: "https://github.com/khalidhany/awesome-security-pipeline", description: "Open-source DevSecOps tools and CI/CD security pipeline for GitHub Actions.", language: "Python", fork: true, updated_at: "2026-10-28T11:25:35Z" }
+];
+
+let allRepos = [...FALLBACK_REPOS];
+let currentFilter = "all";
+
+function updateThemeButton() {
+  const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+  const label = document.getElementById("theme-label");
+  const icon = document.getElementById("theme-icon");
+  if (isDark) {
+    label.textContent = "Light";
+    icon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+  } else {
+    label.textContent = "Dark";
+    icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+  }
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute("data-theme");
+  const next = current === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("kh-theme", next);
+  updateThemeButton();
+}
+
+function stripEmojis(str) {
+  if (!str) return "";
+  return str.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE00}-\u{FE0F}]/gu, "").trim();
+}
+
+function formatDate(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return "";
+  return d.toISOString().split("T")[0];
+}
+
+function renderRepos() {
+  const container = document.getElementById("repo-grid");
+  const filtered = allRepos.filter(r => {
+    if (currentFilter === "source") return !r.fork;
+    if (currentFilter === "crenoxhq") return r.owner === "crenoxhq";
+    if (currentFilter === "fork") return r.fork;
+    return true;
+  });
+
+  container.innerHTML = filtered.map(r => {
+    const badgeText = r.owner === "crenoxhq" ? "@crenoxhq" : (r.fork ? "Fork" : "Public");
+    const desc = stripEmojis(r.description) || "GitHub repository.";
+    const lang = r.language || "Docs";
+    const updated = formatDate(r.updated_at);
+
+    return `
+      <article class="repo-card">
+        <div>
+          <div class="repo-top">
+            <a class="repo-name" href="${r.html_url}" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+              ${r.full_name}
+            </a>
+            <span class="badge">${badgeText}</span>
+          </div>
+          <p class="repo-desc">${desc}</p>
+        </div>
+        <div class="repo-meta">
+          <span>${lang}</span>
+          <span>${updated}</span>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+function filterRepos(mode, btn) {
+  currentFilter = mode;
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  renderRepos();
+}
+
+async function syncGitHubData() {
+  try {
+    const [userRes, userReposRes, orgReposRes] = await Promise.all([
+      fetch("https://api.github.com/users/khalidhany"),
+      fetch("https://api.github.com/users/khalidhany/repos?per_page=100&sort=updated"),
+      fetch("https://api.github.com/orgs/crenoxhq/repos?per_page=100&sort=updated")
+    ]);
+
+    if (userRes.ok) {
+      const userData = await userRes.json();
+      if (typeof userData.followers === "number") {
+        document.getElementById("gh-followers").textContent = userData.followers;
+      }
+    }
+
+    if (userReposRes.ok && orgReposRes.ok) {
+      const userRepos = await userReposRes.json();
+      const orgRepos = await orgReposRes.json();
+
+      const fallbackMap = {};
+      FALLBACK_REPOS.forEach(item => { fallbackMap[item.full_name] = item; });
+
+      const merged = [
+        ...orgRepos.map(r => ({
+          owner: "crenoxhq",
+          name: r.name,
+          full_name: r.full_name,
+          html_url: r.html_url,
+          description: r.description || (fallbackMap[r.full_name] && fallbackMap[r.full_name].description) || "",
+          language: r.language || (fallbackMap[r.full_name] && fallbackMap[r.full_name].language) || "Docs",
+          fork: Boolean(r.fork),
+          updated_at: r.updated_at
+        })),
+        ...userRepos.map(r => ({
+          owner: "khalidhany",
+          name: r.name,
+          full_name: r.name ? `khalidhany/${r.name}` : r.full_name,
+          html_url: r.html_url,
+          description: r.description || (fallbackMap[r.full_name] && fallbackMap[r.full_name].description) || "",
+          language: r.language || (fallbackMap[r.full_name] && fallbackMap[r.full_name].language) || "Code",
+          fork: Boolean(r.fork),
+          updated_at: r.updated_at
+        }))
+      ];
+
+      if (merged.length > 0) {
+        allRepos = merged;
+        document.getElementById("gh-repo-count").textContent = merged.length;
+        renderRepos();
+      }
+    }
+  } catch (err) {}
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+    const dBtn = document.getElementById("dash-btn");
+    const sBtn = document.getElementById("sql-btn");
+    if (dBtn) dBtn.href = "http://localhost:8081/";
+    if (sBtn) sBtn.href = "http://localhost:8081/01_sql/analysis_queries.sql";
+  }
+  updateThemeButton();
+  renderRepos();
+  syncGitHubData();
+});
+</script>
+
+</body>
+</html>
